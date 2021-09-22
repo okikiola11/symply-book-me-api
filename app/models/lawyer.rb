@@ -3,4 +3,6 @@ class Lawyer < ApplicationRecord
   validates :image, presence: true
   validates :specialty, presence: true
   validates :location, presence: true
+
+  has_many :appointments
 end

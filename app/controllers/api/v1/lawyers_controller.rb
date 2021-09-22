@@ -1,9 +1,12 @@
 module Api
   module V1
     class LawyersController < ApplicationController
+      before_action :set_lawyer, only: %i[show update destroy]
+      
       def index
-        lawyers = Lawyer.order('created_at DESC')
-        render json: { status: 'Success', message: 'Loaded all lawyers', data: lawyers }, status: :ok
+        @lawyers = Lawyer.order('created_at DESC')
+        # render json: { status: 'Success', message: 'Loaded all lawyers', data: lawyers }, status: :ok
+        render json: @lawyers
       end
 
       def show
@@ -37,6 +40,13 @@ module Api
       end
 
       private
+
+      def set_lawyer
+        @lawyer = Lawyer.find(params[:id])
+        return if @lawyer.present?
+
+        json_response 'Failed to get lawyer', false, {}, :not_found
+      end
 
       def lawyer_params
         params.permit(:name, :specialty, :location, :image)
