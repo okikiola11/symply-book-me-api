@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :lawyers do
         resources :appointments
       end
+      # resources :sessions, only: [:create, :destroy]
+      resources :users, only: [:create]
     end
   end
 end

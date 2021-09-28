@@ -15,7 +15,9 @@ gem 'puma', '~> 4.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+# gem 'devise'
+# gem 'simple_token_authentication', '~> 1.17'
 
 # To keep the secret keys safe
 gem 'dotenv-rails'

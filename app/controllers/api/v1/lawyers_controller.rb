@@ -2,7 +2,8 @@ module Api
   module V1
     class LawyersController < ApplicationController
       before_action :set_lawyer, only: %i[show update destroy]
-      
+      before_action :authenticate_user!, except: [:show, :index] 
+
       def index
         @lawyers = Lawyer.order('created_at DESC')
         # render json: { status: 'Success', message: 'Loaded all lawyers', data: lawyers }, status: :ok
@@ -20,7 +21,8 @@ module Api
         if lawyer.save
           render json: { status: 'Success', message: 'Saved Lawyer', data: lawyer }, status: :ok
         else
-          render json: { status: 'Error', message: 'Lawyer not saved', data: lawyer.errors }, status: :unprocessable_entity
+          render json: { status: 'Error', message: 'Lawyer not saved', data: lawyer.errors },
+                 status: :unprocessable_entity
         end
       end
 
@@ -29,7 +31,8 @@ module Api
         if lawyer.update_attributes(lawyer_params)
           render json: { status: 'Success', message: 'Lawyer updated', data: lawyer }, status: :ok
         else
-          render json: { status: 'Error', message: 'Unable to update Lawyer', data: lawyer.errors }, status: :unprocessable_entity
+          render json: { status: 'Error', message: 'Unable to update Lawyer', data: lawyer.errors },
+                 status: :unprocessable_entity
         end
       end
 
