@@ -8,8 +8,7 @@ module Api
         if user.save
           render json: { status: 'Success', message: 'Saved User', data: user }, status: :ok
         else
-          render json: { status: 'Error', message: 'user not saved', data: user.errors },
-                status: :unprocessable_entity
+          render json: { status: 'Error', message: 'user not saved', data: user.errors }, status: :unprocessable_entity
         end
       end
 

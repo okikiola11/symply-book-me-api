@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       end
       # resources :sessions, only: [:create, :destroy]
       resources :users, only: [:create]
+      post 'login', to: 'authentication#login'
     end
   end
 end
