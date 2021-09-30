@@ -5,4 +5,5 @@ class Lawyer < ApplicationRecord
   validates :location, presence: true
 
   has_many :appointments
+  belongs_to :user
 end

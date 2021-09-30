@@ -2,8 +2,9 @@ module Api
   module V1
     class LawyersController < ApplicationController
       before_action :set_lawyer, only: %i[show update destroy]
-      before_action :authenticate_user!, except: [:show, :index] 
-
+      # before_action :authenticate_user!, except: [:show, :index] 
+      before_action :authorize
+      
       def index
         @lawyers = Lawyer.order('created_at DESC')
         # render json: { status: 'Success', message: 'Loaded all lawyers', data: lawyers }, status: :ok
@@ -52,7 +53,7 @@ module Api
       end
 
       def lawyer_params
-        params.permit(:name, :specialty, :location, :image)
+        params.permit(:name, :specialty, :location, :image, :user_id)
       end
     end
   end
