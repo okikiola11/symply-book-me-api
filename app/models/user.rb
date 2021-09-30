@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :appointments
   
   validates :password, length: { in: 6..20 }, presence: true
   validates :email, presence: true
