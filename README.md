@@ -5,6 +5,7 @@ This is a REST API built with Ruby on Rails with the aim of providing storage an
 ## Built With
 - Ruby 2.7.1
 - Ruby on Rails
+- JWT
 - PostgrESQL
 - Postman
 
@@ -12,6 +13,7 @@ This is a REST API built with Ruby on Rails with the aim of providing storage an
 
 ## Running locally 
 
+```
 - Clone this repository
 $ git clone https://github.com/okikiola11/symply-book-me-api.git
 $ cd symply-book-me-api
@@ -23,6 +25,7 @@ $ localhost:3000
 - To run the tests
 $ bundle exec rspec
 
+```
 - <strong>Use Postman or any other API tester to test the API</strong>
 
 - You should see an error since you need to log in to get any data 
