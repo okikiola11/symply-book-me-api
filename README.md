@@ -31,7 +31,7 @@ $ bundle exec rspec
 - You should see an error since you need to log in to get any data 
 
 ## Live link
-Click <a href="">Lawyers</a>
+Click <a href="https://symply-book-me.herokuapp.com/">symply book me</a>
 
 ## Contributing
 - To contribute to this project
