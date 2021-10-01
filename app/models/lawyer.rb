@@ -1,4 +1,6 @@
 class Lawyer < ApplicationRecord
+  include ImageUploader::Attachment(:image)
+
   validates :name, presence: true
   validates :image, presence: true
   validates :specialty, presence: true

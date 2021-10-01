@@ -23,7 +23,9 @@ gem 'jwt', '~> 2.2', '>= 2.2.3'
 # To keep the secret keys safe
 gem 'dotenv-rails'
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
+gem 'shrine', '~> 3.3'
+gem 'shrine-cloudinary', '~> 1.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

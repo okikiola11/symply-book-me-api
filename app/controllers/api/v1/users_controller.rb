@@ -2,7 +2,7 @@ module Api
   module V1
     class UsersController < ApplicationController
       before_action :authorize, only: [:show]
-      
+
       def create
         # Read in the user parameters
         @user = User.create(user_params)
@@ -22,9 +22,8 @@ module Api
       private
 
       def user_params
-        params.permit(:name, :email, :password)
+        params.permit(:name, :email, :password, :password_confirmation)
       end
-
     end
   end
 end
