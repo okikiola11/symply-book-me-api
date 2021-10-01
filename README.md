@@ -1,24 +1,58 @@
-# README
+# SYMPLY BOOK ME
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a REST API built with Ruby on Rails with the aim of providing storage and session management for a front-end application.
 
-Things you may want to cover:
+## Built With
+- Ruby 2.7.1
+- Ruby on Rails
+- PostgrESQL
+- Postman
 
-* Ruby version
+# Getting Started
 
-* System dependencies
+## Running locally 
 
-* Configuration
+- Clone this repository
+$ git clone https://github.com/okikiola11/symply-book-me-api.git
+$ cd symply-book-me-api
+$ bundle install
+$ rails db:create && rails db:migrate
+$ rails s
+$ localhost:3000
 
-* Database creation
+- To run the tests
+$ bundle exec rspec
 
-* Database initialization
+- <strong>Use Postman or any other API tester to test the API</strong>
 
-* How to run the test suite
+- You should see an error since you need to log in to get any data 
 
-* Services (job queues, cache servers, search engines, etc.)
+## Live link
+Click <a href="">Lawyers</a>
 
-* Deployment instructions
+## Contributing
+- To contribute to this project
+- Fork this repository & clone locally.
+- Create an upstream remote and sync your local copy.
+- Create a new branch.
+- Push your code to your origin repository.
+- Create a new Pull Request .
 
-* ...
+## Author
+
+👤 Apelehin Okikiola
+
+- Github: [@okikiola11](https://github.com/okikiola11)
+- Twitter: [@Kikiolla3](https://twitter.com/Kikiolla3)
+- LinkedIn: [@okikiola-apelehin](https://www.linkedin.com/in/okikiola-apelehin-459008122/)
+
+
+## 🤝 Contributing
+ Contributions, issues and feature requests are welcome!
+- create an issue <a href="https://github.com/okikiola11/symply-book-me-api.git/issues">here</a>
+
+## Show your support 
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- Microverse curriculum.
