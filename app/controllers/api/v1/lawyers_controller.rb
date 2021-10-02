@@ -1,6 +1,8 @@
 module Api
   module V1
     class LawyersController < ApplicationController
+      include ErrorSerializer
+
       before_action :set_lawyer, only: %i[show update destroy]
       # before_action :authenticate_user!, except: [:show, :index]
       before_action :authorize
@@ -22,8 +24,9 @@ module Api
         if lawyer.save
           render json: { status: 'Success', message: 'Saved Lawyer', data: lawyer }, status: :ok
         else
-          render json: { status: 'Error', message: 'Lawyer not saved', data: lawyer.errors },
-                 status: :unprocessable_entity
+          render json: ErrorSerializer.serialize(lawyer.errors)
+          # render json: { status: 'Error', message: 'Lawyer not saved', data: lawyer.errors },
+          #        status: :unprocessable_entity
         end
       end
 
