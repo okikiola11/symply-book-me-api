@@ -8,8 +8,8 @@ api_secret: ENV['CLOUD_API_SECRET'],
 )
 
 Shrine.storages = {
-cache: Shrine::Storage::Cloudinary.new(prefix: "electric_car/cache"), # for direct uploads
-store: Shrine::Storage::Cloudinary.new(prefix: "electric_car"),
+cache: Shrine::Storage::Cloudinary.new(prefix: "symply_book_me/cache"), # for direct uploads
+store: Shrine::Storage::Cloudinary.new(prefix: "symply_book_me"),
 }
 
 Shrine.plugin :activerecord           # loads Active Record integration
