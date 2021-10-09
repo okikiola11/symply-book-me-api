@@ -5,7 +5,7 @@ module Api
 
       def create
         # Read in the user parameters
-        @user = User.create(user_params)
+        @user = User.create!(user_params)
 
         if @user.valid?
           token = encode_token({ user_id: @user.id })
@@ -22,7 +22,7 @@ module Api
       private
 
       def user_params
-        params.permit(:name, :email, :password, :password_confirmation)
+        params.require(:user).permit(:name, :email, :password, :password_confirmation)
       end
     end
   end
