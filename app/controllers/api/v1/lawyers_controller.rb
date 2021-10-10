@@ -1,21 +1,17 @@
 module Api
   module V1
     class LawyersController < ApplicationController
-      # include ErrorSerializer
-
       before_action :set_lawyer, only: %i[show update destroy]
-      # before_action :authenticate_user!, except: [:show, :index]
-      before_action :authorize
+      before_action :authorize, except: %i[index]
 
       def index
         @lawyers = Lawyer.order('created_at DESC')
-        # render json: { status: 'Success', message: 'Loaded all lawyers', data: lawyers }, status: :ok
         render json: @lawyers
       end
 
       def show
         lawyer = Lawyer.find(params[:id])
-        render json: { status: 'Success', message: 'Loaded lawyer', data: lawyer }, status: :ok
+        render json: { status: 'Success', message: 'Loaded lawyers successfully', data: lawyer }, status: :ok
       end
 
       def create
@@ -24,8 +20,7 @@ module Api
         if lawyer.save
           render json: { status: 'Success', message: 'Saved Lawyer', data: lawyer }, status: :ok
         else
-          # render json: ErrorSerializer.serialize(lawyer.errors)
-          render json: { status: 'Error', message: 'Lawyer not saved', data: lawyer.errors },
+          render json: { status: 'Error', message: 'Lawyer is not saved', data: lawyer.errors },
                  status: :unprocessable_entity
         end
       end
@@ -52,7 +47,8 @@ module Api
         @lawyer = Lawyer.find(params[:id])
         return if @lawyer.present?
 
-        json_response 'Failed to get lawyer', false, {}, :not_found
+        render json: { status: 'Success', message: 'Failed to get lawyer', data: @lawyer }, status: :unprocessable_entity
+        # json_response 'Failed to get lawyer', false, {}, :not_found
       end
 
       def lawyer_params

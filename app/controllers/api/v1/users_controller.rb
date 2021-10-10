@@ -4,7 +4,6 @@ module Api
       before_action :authorize, only: [:show]
 
       def create
-        # Read in the user parameters
         @user = User.create!(user_params)
 
         if @user.valid?

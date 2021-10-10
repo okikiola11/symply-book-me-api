@@ -6,7 +6,7 @@ module Api
       def index
         @appointments = Appointment.where(user_id: @current_user.id)
         if @appointments
-          render :index
+          render json: @appointments
         else
           render json: 'No appointments yet'
         end

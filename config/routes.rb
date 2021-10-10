@@ -4,8 +4,7 @@ Rails.application.routes.draw do
     namespace 'v1' do
       # root :to => "users#show"
       resources :lawyers 
-      resources :appointments, only: [:create, :index]
-      # resources :sessions, only: [:create, :destroy]
+      resources :appointments, only: [:create, :index, :destroy]
       resources :users, only: [:create]
       post '/login', to: 'authentication#login'
       delete '/logout', to: "authentication#destroy"
