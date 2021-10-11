@@ -39,7 +39,4 @@ class ApplicationController < ActionController::API
     !!logged_in_user
   end
 
-  def fallback_index_html
-    render file: 'public/index.html'
-  end
 end
