@@ -47,7 +47,8 @@ module Api
         @lawyer = Lawyer.find(params[:id])
         return if @lawyer.present?
 
-        render json: { status: 'Success', message: 'Failed to get lawyer', data: @lawyer }, status: :unprocessable_entity
+        render json: { status: 'Success', message: 'Failed to get lawyer', data: @lawyer },
+               status: :unprocessable_entity
         # json_response 'Failed to get lawyer', false, {}, :not_found
       end
 
