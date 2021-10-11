@@ -1,13 +1,29 @@
 # SYMPLY BOOK ME
 
-This is a REST API built with Ruby on Rails with the aim of providing storage and session management for a front-end application.
+A RESTFUL API built with Ruby on Rails. This application exposes API endpoints for booking an appointment with a lawyer front end application. The application allows user to register, login, view available lawyers and book appointments with lawyers.
 
 ## Built With
 - Ruby 2.7.1
 - Ruby on Rails
-- JWT
-- PostgrESQL
+- PostgreSQL
 - Postman
+- Rspec
+
+
+## Endpoints: /api/v1
+
+Method | EndPoint | Action
+--- | ----- | ---
+POST | users | Register a user
+POST | login | Login a registered user
+DELETE | logout | Logout a user
+GET | lawyers | Fetch all lawyers
+GET | lawyers/:id | Fetch a specific lawyer
+POST | appointments | Book an appointment
+GET | appointments | Fetch appointments for a specific user
+DELETE | appointments/:id | Delete a users appointment
+--- | --- | ---
+
 
 # Getting Started
 
@@ -22,13 +38,12 @@ $ rails db:create && rails db:migrate
 $ rails s
 $ localhost:3000
 
+- Use postman to test the endpoints.
+
 - To run the tests
 $ bundle exec rspec
 
 ```
-- <strong>Use Postman or any other API tester to test the API</strong>
-
-- You should see an error since you need to log in to get any data 
 
 ## Live link
 Click <a href="https://symply-book-me.herokuapp.com/">symply book me</a>
@@ -55,7 +70,7 @@ Click <a href="https://symply-book-me.herokuapp.com/">symply book me</a>
 - create an issue <a href="https://github.com/okikiola11/symply-book-me-api.git/issues">here</a>
 
 ## Show your support 
-Give a ⭐️ if you like this project!
+- Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 - Microverse curriculum.
