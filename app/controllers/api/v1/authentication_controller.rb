@@ -10,7 +10,7 @@ class Api::V1::AuthenticationController < ApplicationController
     end
   end
 
-  def log_out
+  def destroy
     @current_user = nil
   end
 
