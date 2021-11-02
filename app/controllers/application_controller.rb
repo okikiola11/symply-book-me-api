@@ -38,5 +38,4 @@ class ApplicationController < ActionController::API
   def logged_in?
     !!logged_in_user
   end
-
 end
