@@ -4,7 +4,7 @@ module Api
       before_action :authorize
 
       def index
-        @appointments = Appointment.where(user_id: @current_user.id)
+        @appointments = Appointment.all
         if @appointments
           render json: @appointments
         else
