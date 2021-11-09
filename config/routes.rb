@@ -4,8 +4,8 @@ Rails.application.routes.draw do
       resources :lawyers 
       resources :appointments, only: [:create, :index, :destroy]
       resources :users, only: [:create]
-      post '/login', to: 'authentication#login'
-      delete '/logout', to: "authentication#destroy"
+      post '/create', to: 'authentication#create'
+      delete '/destroy', to: "authentication#destroy"
     end
   end
 end

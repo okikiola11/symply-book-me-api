@@ -5,7 +5,7 @@ module Api
       before_action :authorize, except: %i[index]
 
       def index
-        @lawyers = Lawyer.order('created_at DESC')
+        @lawyers = Lawyer.all
         render json: @lawyers
       end
 

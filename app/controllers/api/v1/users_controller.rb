@@ -8,7 +8,7 @@ module Api
 
         if @user.valid?
           token = encode_token({ user_id: @user.id })
-          render json: { user: @user, token: token }, status: :ok
+          render json: { user: @user, token: token }, except: [:password_digest], status: :ok
         else
           render json: { status: 'Error', message: 'user not saved', data: @user.errors }, status: :unprocessable_entity
         end
